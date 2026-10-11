@@ -9,11 +9,13 @@
     "onde": "Oltremare, parque marinho de Riccione, Itália",
     "quando": "Julho de 2026",
     "historia": "",
-    "fotos": "https://photos.icloud.com/shared/album/0baB1ax-cQwzZD-gvA3aCCrMg"
+    "fotos": "https://photos.icloud.com/shared/album/0baB1ax-cQwzZD-gvA3aCCrMg",
+    "bandeira": "🇮🇹",
+    "data": "Viagem de 26/07 a 01/08/2026"
   },
   {
     "numero": 2,
-    "emoji": "⚽",
+    "emoji": "🗼",
     "slug": "psg",
     "nome": "Paris Saint-Germain",
     "foto": "img/02-psg.jpg",
@@ -21,6 +23,8 @@
     "onde": "Paris, França",
     "quando": "Outubro de 2026, viagem em família",
     "historia": "",
-    "fotos": "https://photos.icloud.com/shared/album/0ba0yszoGbf4TuUfZxSp8Zccg"
+    "fotos": "https://photos.icloud.com/shared/album/0ba0yszoGbf4TuUfZxSp8Zccg",
+    "bandeira": "🇫🇷",
+    "data": "Viagem de 03 a 07/10/2026"
   }
 ]
