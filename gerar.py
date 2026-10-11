@@ -10,6 +10,7 @@ ul{list-style:none;padding:0;margin:0}li a{display:flex;align-items:center;gap:1
 li a:active{background:#24242a}li img{width:64px;height:52px;object-fit:cover;border-radius:10px;background:#0d0d0f}li span{font-size:1.05rem}
 .hero{width:100%;display:block;background:#0e0e10}.n{color:#7fb0d6;font-size:.95rem;letter-spacing:1px;margin:0}h2{margin:2px 0 18px;font-size:1.5rem;font-weight:600}
 dl{margin:0}dt{color:#8b8b93;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-top:14px}dd{margin:2px 0 0}.hist{white-space:pre-line}
+.album{display:block;margin-top:26px;padding:14px;border-radius:12px;background:#2a2d33;color:#fff;text-align:center;text-decoration:none;font-weight:600}
 .back{display:inline-block;margin-top:30px;color:#7fb0d6;text-decoration:none}"""
 def page(title, body):
     return f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#121214"><title>{html.escape(title)}</title><style>{CSS}</style></head><body>{body}</body></html>'
@@ -19,6 +20,7 @@ items = "".join(f'<li><a href="{fname(c)}"><img src="{c.get("thumb") or c["foto"
 (D/"index.html").write_text(page("Minha coleção de chaveiros", f'<main><h1>Minha coleção de chaveiros</h1><ul>{items}</ul></main>'))
 for c in cs:
     rows = "".join(f'<dt>{l}</dt><dd{" class=hist" if k=="historia" else ""}>{html.escape(c[k])}</dd>' for k, l in [("onde","Local"),("quando","Quando"),("historia","História")] if c.get(k, "").strip())
-    body = f'<img class="hero" src="{c["foto"]}" alt="{html.escape(c["nome"])}"><main><p class="n">{c["emoji"]} Nº {c["numero"]:02d}</p><h2>{html.escape(c["nome"])}</h2><dl>{rows}</dl><a class="back" href="index.html">← Coleção</a></main>'
+    album = f'<a class="album" href="{c["fotos"]}" target="_blank" rel="noopener">📸 Fotos da viagem</a>' if c.get("fotos","").strip() else ''
+    body = f'<img class="hero" src="{c["foto"]}" alt="{html.escape(c["nome"])}"><main><p class="n">{c["emoji"]} Nº {c["numero"]:02d}</p><h2>{html.escape(c["nome"])}</h2><dl>{rows}</dl>{album}<a class="back" href="index.html">← Coleção</a></main>'
     (D/fname(c)).write_text(page(f'{c["numero"]:02d} · {c["nome"]}', body))
 print("ok:", len(cs), "chaveiro(s)")
