@@ -9,5 +9,16 @@
     "onde": "Oltremare, parque marinho de Riccione, Itália",
     "quando": "",
     "historia": ""
+  },
+  {
+    "numero": 2,
+    "emoji": "⚽",
+    "slug": "psg",
+    "nome": "Paris Saint-Germain",
+    "foto": "img/02-psg.jpg",
+    "thumb": "img/02-psg-thumb.jpg",
+    "onde": "",
+    "quando": "",
+    "historia": ""
   }
 ]
